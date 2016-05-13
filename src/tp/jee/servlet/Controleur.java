@@ -19,12 +19,42 @@ public class Controleur extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getServletContext().getRequestDispatcher("/WEB-INF/vue.jsp");
+		request.getServletContext().getRequestDispatcher("/WEB-INF/vue.jsp").forward(request, response);
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		String t1=request.getParameter("terme1");
+		int terme1=Integer.parseInt(t1);
+		String t2=request.getParameter("terme2");
+		int terme2=Integer.parseInt(t2);
+		String operation=request.getParameter("operation");
+		int resultat= 0;
+		char symbole='+';
+		switch (operation){
+		case ("addition"):
+			resultat=terme1+terme2;
+			symbole='+';
+			break;
+		case ("soustraction"):
+			resultat=terme1-terme2;
+			symbole='-';
+			break;
+		case ("multiplcation"):
+			resultat=terme1*terme2;
+			symbole='*';
+			break;
+		case ("divisionn"):
+			resultat=terme1/terme2;
+			symbole='/';
+			break;
+			
+		}
+		request.setAttribute("terme1", terme1);
+		request.setAttribute("terme2", terme2);
+		request.setAttribute("symbole",symbole);
+		request.setAttribute("resultat", resultat);
+		request.getServletContext().getRequestDispatcher("/WEB-INF/vue.jsp").forward(request, response);
 	}
 
 }

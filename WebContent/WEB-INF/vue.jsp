@@ -9,7 +9,7 @@
 
 <body>
 <h1>Résultat</h1>
-<p>C est ici ou il faut ecrire le resultat</p>
+<p>le résultat de ${terme1 } ${symbole } ${ terme2} = ${resultat} </p>
 <h1>Opération</h1>
  <p>
 	<form method="post" action="calcul">
