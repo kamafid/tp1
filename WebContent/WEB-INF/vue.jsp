@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>TP 1</title>
 </head>
 
 <body>
@@ -13,15 +13,15 @@
 <h1>Opération</h1>
  <p>
 	<form method="post" action="calcul">
-		<input type="text" name="terme1" id="terme1" placeholder="saisir le terme 1"  />
+		<input type="number" name="terme1" id="terme1" />
 	    <select name="operation" id="pays">
 	       <option value="addition">+</option>
 	       <option value="soustraction">-</option>
 	       <option value="multiplication">*</option>
 	       <option value="division">/</option>
 	     </select>
-		<input type="text" name="terme2" id="terme2" placeholder="saisir le terme 2" />
-		<input type="submit" value="Claculer" ></code>
+		<input type="number" name="terme2" id="terme2" />
+		<input type="submit" value="Claculer" >
 	 </form>
  </p>
 </body>

@@ -25,8 +25,12 @@ public class Controleur extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String t1=request.getParameter("terme1");
+		if( t1=="")
+				t1="0";
 		int terme1=Integer.parseInt(t1);
 		String t2=request.getParameter("terme2");
+		if( t2=="")
+			t2="0";
 		int terme2=Integer.parseInt(t2);
 		String operation=request.getParameter("operation");
 		int resultat= 0;
